@@ -1,1 +1,20 @@
-<p>blog-post works!</p>
+<div *ngIf="loading" class="center"><mat-spinner color="primary"></mat-spinner></div>
+<div *ngIf="blog && !loading" class="center">
+  <mat-card class="post-card pr-1em">
+    <mat-card-header>
+      <mat-card-title><h2>{{ blog.data.title.iv }}</h2></mat-card-title>
+      <mat-card-subtitle>Posted on: {{ blog.created | date }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="card-img" src="{{ blog.data.postBanner.iv }}" alt="{{ blog.data.slug.iv }}">
+    <mat-card-content>
+      <p>
+        {{ blog.data.Description.iv }}
+      </p>
+      <p [innerHtml]="safeHtml"></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" routerLink="/blog">Back</button>
+    </mat-card-actions>
+  </mat-card>  
+</div>
+<div [hidden]="blog">OOPS SOMETHINGS HAPPENED</div>

@@ -1,1 +1,25 @@
-<p>blogs works!</p>
+<!-- ngFor the card -->
+<h1 class="center-me">Recent Blog Posts</h1>
+<div *ngIf="loading" class="center"><mat-spinner color="primary"></mat-spinner></div>
+<div *ngIf="blogs && !loading" class="center">
+  <mat-card *ngFor="let blog of blogsArray" class="post-card pr-1em">
+    <mat-card-header>
+      <mat-card-title>{{ blog.data.title.iv }}</mat-card-title>
+      <mat-card-subtitle>Posted on: {{ blog.created | date }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="card-img" src="{{ blog.data.postBanner.iv }}" alt="{{ blog.data.slug.iv }}">
+    <mat-card-content>
+      <p>
+        {{ blog.data.Description.iv }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <!-- <button mat-raised-button color="accent" routerLink="/blog/{{ blog.data.slug.iv }}/{{ blog.id }}">View</button> -->
+      <button mat-raised-button color="accent" (click)="navigateToEdit(blog.data.slug.iv, blog.id)">View</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div class="pt-1em center-me">
+  <button *ngIf="!disabled" mat-raised-button color="primary" (click)="onLoadMore()">Load More</button>
+</div>
+<div [hidden]="blogs">OOPS SOMETHINGS HAPPENED</div>

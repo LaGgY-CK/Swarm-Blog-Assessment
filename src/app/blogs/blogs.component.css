@@ -1,0 +1,10 @@
+.post-card {
+  max-width: 350px;
+  display: inline-block;
+}
+
+.card-img {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
