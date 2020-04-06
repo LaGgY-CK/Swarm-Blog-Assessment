@@ -11,7 +11,7 @@ const targetPath1 = './src/environments/environment.prod.ts';
 const colors = require('colors');
 
 // `environment.ts` file structure
-const envConfigFile = `export const environment = {
+let envConfigFile = `export const environment = {
   squidex_url: '${process.env.SQUIDEX_URL}',
   client_id:  '${process.env.CLIENT_ID}',
   client_secret: '${process.env.CLIENT_SECRET}',
@@ -26,6 +26,12 @@ writeFile(targetPath, envConfigFile, function (err) {
     console.log(colors.magenta(`Angular environment.ts file generated correctly at ${targetPath} \n`));
   }
 });
+envConfigFile = `export const environment = {
+  squidex_url: '${process.env.SQUIDEX_URL}',
+  client_id:  '${process.env.CLIENT_ID}',
+  client_secret: '${process.env.CLIENT_SECRET}',
+  production: true,
+};`;
 writeFile(targetPath1, envConfigFile, function (err) {
   if (err) {
     throw console.error(err);
