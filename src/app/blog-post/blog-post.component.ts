@@ -22,13 +22,12 @@ export class BlogPostComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    let id = localStorage.getItem('blog_id');
+    let id = this.blogService.storeBlogId;
     if (!id) {
-      id = this.blogService.storeBlogId;
       // add this as backup
-      localStorage.setItem('blog_id', id);
+      id = localStorage.getItem('blog_id');
     }
-    
+    localStorage.setItem('blog_id', id);
     this.getBlogPost(id.toString());
   }
 
