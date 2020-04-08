@@ -1,0 +1,38 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar { height: 10px; }
+
+.nav-link-div {
+  padding-top: 1%;
+  padding-left: 1%;
+}
+
+@media only screen 
+and (min-width : 500px) 
+and (max-width : 1024px) {
+  .nav-link-div {
+    padding-top: 1.5%;
+    padding-left: 1.5%;
+  }
+}
+
+@media only screen 
+and (min-width : 350px) 
+and (max-width : 480px) {
+  .nav-link-div {
+    padding-top: 3%;
+    padding-left: 3%;
+  }
+}
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 349px) {
+  .nav-link-div {
+    padding-top: 4%;
+    padding-left: 4%;
+  }
+}

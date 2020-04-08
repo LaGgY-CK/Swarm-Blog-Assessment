@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class BlogsComponent implements OnInit {
 
+  title = 'My Hobbies';
   blogs: Blogs = null;
   blogsArray: Blog[] = null
   skip = 0;

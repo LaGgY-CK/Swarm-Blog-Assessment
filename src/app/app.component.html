@@ -1,13 +1,20 @@
-<body >
+<div>
   <app-header></app-header>
-  <div class="banner-image">
-    <div class="banner-text">
-      <h1>{{title}}</h1>
-      <p>Some witty banner sub text Paragraph</p>
+  
+  <div class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block img-fluid" src="../assets/img/banner.jpg" alt="banner image">
+        <div class="carousel-caption">
+          <h1>{{title}}</h1>
+          <p class="font-large">Some witty banner sub text Paragraph</p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="content" role="main">
+  
+  <div class="container">
     <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>
-</body>
+</div>

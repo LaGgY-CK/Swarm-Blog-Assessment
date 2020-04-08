@@ -20,7 +20,7 @@ export class BlogsService {
    * @param skip string
    */
   getPosts(skip: string = '0'): Observable<Blogs> {
-    const postsUrl = `/content/swarm-digital-assesment-blog/posts/?$top=3&$skip=${skip}`;
+    const postsUrl = `/api/content/swarm-digital-assesment-blog/posts/?$top=3&$skip=${skip}`;
     return this.http.get<Blogs>(environment.squidex_url + postsUrl).pipe(
       catchError(this.handleError<Blogs>('getPosts', null))
     );
@@ -31,7 +31,7 @@ export class BlogsService {
    * @param id string
    */
   getPost(id: string): Observable<Blog> {
-    const postUrl = `/content/swarm-digital-assesment-blog/posts/${id}`;
+    const postUrl = `/api/content/swarm-digital-assesment-blog/posts/${id}`;
     return this.http.get<Blog>(environment.squidex_url + postUrl).pipe(
       catchError(this.handleError<Blog>(`getPost id=${id}`))
     );

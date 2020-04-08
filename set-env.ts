@@ -15,6 +15,7 @@ let envConfigFile = `export const environment = {
   squidex_url: '${process.env.SQUIDEX_URL}',
   client_id:  '${process.env.CLIENT_ID}',
   client_secret: '${process.env.CLIENT_SECRET}',
+  production: '${process.env.PRODUCTION}',
 };`;
 
 console.log(colors.magenta('The file `environment.ts` & `environment.prod.ts` will be written with the following content: \n'));

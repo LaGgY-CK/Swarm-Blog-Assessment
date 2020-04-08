@@ -1,29 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
-html, body { height: 100% }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.pt-1em {
-  padding-top: 1em;
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+body { 
+  display: block;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
 }
 
-.pr-1em {
- margin-right: 3em !important;
+.pt-4 {
+  padding-top: 4%;
+}
+
+.pb-4 {
+  padding-bottom: 4%;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
 }
 
 .center-me {
   text-align: center;
 }
 
-.footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
+.background-color {
+  background-color: #303030;
+}
+.primary {
+  background-color: #c2185b;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.card {
+  /* border-radius: 0.25rem; */
+  box-shadow: 0 0 11px #504e4e;
+  -moz-box-shadow: 0 0 13px #504e4e;
+  -webkit-box-shadow: 0 0 13px #504e4e;
+  margin-bottom: 30px;
+}
+
+.card-img {
+  background-position: 50%;
+  background-size: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 2.5%;
 }

@@ -1,8 +1,41 @@
+
+footer {
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
 p {
-  font-size: smaller;
-  font-weight: 200;
+  padding-top: 0.9%;
+  font-size: 1.25em;
+  font-weight: 500;
 }
 
 a {
   color: white;
+}
+
+@media only screen 
+and (min-width : 350px) 
+and (max-width : 480px) {
+  p {
+    padding-top: 4%;
+    font-size: 1em;
+    font-weight: 400;
+  }
+}
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 349px) {
+  p {
+    padding-top: 0.9%;
+    font-size: 1em;
+    font-weight: 400;
+  }
 }

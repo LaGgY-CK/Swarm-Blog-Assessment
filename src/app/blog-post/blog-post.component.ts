@@ -22,8 +22,13 @@ export class BlogPostComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    /* const id = this.route.snapshot.paramMap.get('id'); */
-    const id = this.blogService.storeBlogId;
+    let id = localStorage.getItem('blog_id');
+    if (!id) {
+      id = this.blogService.storeBlogId;
+      // add this as backup
+      localStorage.setItem('blog_id', id);
+    }
+    
     this.getBlogPost(id.toString());
   }
 

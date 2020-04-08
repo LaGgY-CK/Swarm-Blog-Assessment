@@ -1,20 +1,22 @@
-<div *ngIf="loading" class="center"><mat-spinner color="primary"></mat-spinner></div>
-<div *ngIf="blog && !loading" class="center">
-  <mat-card class="post-card pr-1em">
-    <mat-card-header>
-      <mat-card-title><h2>{{ blog.data.title.iv }}</h2></mat-card-title>
-      <mat-card-subtitle>Posted on: {{ blog.created | date }}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image class="card-img" src="{{ blog.data.postBanner.iv }}" alt="{{ blog.data.slug.iv }}">
-    <mat-card-content>
-      <p>
-        {{ blog.data.Description.iv }}
-      </p>
-      <p [innerHtml]="safeHtml"></p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="accent" routerLink="/blog">Back</button>
-    </mat-card-actions>
-  </mat-card>  
+<h1 class="center-me pb-4" *ngIf="blog && !loading">{{ blog.data.title.iv }}</h1>
+<div *ngIf="loading" class="center-me">
+  <h3>Loading Content</h3>
 </div>
-<div [hidden]="blog">OOPS SOMETHINGS HAPPENED</div>
+<!-- SPINNER -->
+<div class="row center" *ngIf="blog && !loading">
+  <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-10">
+    <div class="card post-card">
+      <img class="card-img card-img-top" src="{{ blog.data.postBanner.iv }}"/>
+      <div class="card-body">
+        <h5 class="card-title">{{ blog.data.title.iv }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ blog.created | date }}</h6>
+        <p class="card-text">{{ blog.data.Description.iv }}</p>
+        <p class="card-text" [innerHtml]="safeHtml"></p>
+        <button class="btn primary" routerLink="/blog">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div [hidden]="blog" class="row center-me">
+  <div>OOPS SOMETHINGS HAPPENED</div>
+</div>
